@@ -1,11 +1,12 @@
-// pages/index.tsx
+
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
-
+import Header from '/src/coponents/header;
 
 const Home: React.FC = () => {
   return (
+
     <div className="bg-gray-100">
       <Head>
         <title>Visit Here</title>
