@@ -1,31 +1,30 @@
 
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Head from 'next/head';
-import Header from '/src/coponents/header;
+
+const Header = dynamic(() => import('../components/header/header'), {
+  ssr: true,
+});
+const Footer = dynamic(() => import('../components/footer/footer'), {
+  ssr: true,
+});
 
 const Home: React.FC = () => {
   return (
 
     <div className="bg-gray-100">
-      <Head>
-        <title>Visit Here</title>
-      </Head>
 
+   <Header />
 
       <main>
         {/* Section 1 with Background Image, Heading, and Paragraph */}
         <section
-          className="bg-cover p-4 bg-center  h-screen flex items-center"
+          className="bg-cover p-2 py-40 bg-center  flex items-center"
           style={{ backgroundImage: 'url("/images/watch.jpg")' }}
         >
           <div className="container mx-auto text-center text-white">
-            <Image
-              src="\images\next.svg"
-              alt="Description of the image"
-              width={500}
-              height={300}
-            />
             <h1 className="text-4xl font-bold mb-4">Welcome to Your Website</h1>
             <p className="text-lg">
               Your paragraph content goes here. Lorem ipsum dolor sit amet,
@@ -88,7 +87,7 @@ const Home: React.FC = () => {
 
       </main>
 
-
+      <Footer />
     </div>
   );
 };
